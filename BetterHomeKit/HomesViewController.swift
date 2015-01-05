@@ -87,6 +87,18 @@ class HomesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
 
     }
+
+    func remove_Home() {
+        self.homeManager?.removeHome(Core.sharedInstance.currentHome) {
+            error in
+            if error != nil {
+                NSLog("Failed removing home, error:\(error)")
+            } else {
+                NSLog("Success in removing home");
+                self.homesTableView.reloadData()
+            }
+        }
+    }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         

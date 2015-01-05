@@ -9,7 +9,7 @@
 import UIKit
 import HomeKit
 
-class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HMHomeManagerDelegate, HMHomeDelegate, HMAccessoryDelegate {
 
     @IBOutlet weak var usersTableView: UITableView!
     
@@ -59,6 +59,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     }
                 }
         }))*/
+        /*
         Core.sharedInstance.currentHome?.addUserWithCompletionHandler {
             user, error in
             if error != nil {
@@ -66,11 +67,23 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
             } else {
                 self.fetchUsers()
             }
-        }
+        }*/
         /*dispatch_async(dispatch_get_main_queue(),
             {
                 self.presentViewController(alert, animated: true, completion: nil)
         })*/
+        for accessory in Core.sharedInstance.currentHome?.accessories as [HMAccessory] {
+            NSLog("Accessory %@", accessory.name);
+            Core.sharedInstance.currentHome?.removeAccessory(accessory, completionHandler: {
+                (error:NSError!) in
+                if error != nil {
+                    NSLog("Error")
+                }
+            })
+            //            Core.sharedInstance.currentHome?.removeAccessory(accessory, nil);
+        }
+/*        let HomesViewControllerVar = HomesViewController()
+        HomesViewControllerVar.remove_Home() */
     }
 
     @IBAction func dismissVC(sender: AnyObject) {

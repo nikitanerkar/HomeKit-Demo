@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -181,8 +181,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="I4K-hY-P2R">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="I4K-hY-P2R">
+                                <rect key="frame" x="87" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="f3T-og-tFr" detailTextLabel="biU-xR-rZW" style="IBUITableViewCellStyleSubtitle" id="to8-Ne-xQh">
@@ -225,7 +225,7 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Users" id="c3I-ZJ-5LV">
+                        <barButtonItem title="Reset" id="c3I-ZJ-5LV">
                             <connections>
                                 <segue destination="ogM-tw-gcH" kind="popoverPresentation" identifier="presentUsersVC" popoverAnchorBarButtonItem="c3I-ZJ-5LV" id="GsH-b0-TJ7">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -1084,7 +1084,7 @@
             </objects>
             <point key="canvasLocation" x="533" y="1598"/>
         </scene>
-        <!--Users-->
+        <!--Reset Accessories-->
         <scene sceneID="zh4-Ij-2GU">
             <objects>
                 <viewController id="6FI-Ta-wwB" customClass="UsersViewController" customModule="HomeKitDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -1136,13 +1136,13 @@
                             <constraint firstAttribute="trailing" secondItem="9Bo-th-Iwz" secondAttribute="trailing" id="l38-YW-tdg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Users" id="b70-gy-tsM">
+                    <navigationItem key="navigationItem" title="Reset Accessories" id="b70-gy-tsM">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Mz0-Yi-2IG">
                             <connections>
                                 <action selector="dismissVC:" destination="6FI-Ta-wwB" id="2Rd-q4-SCu"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="O7m-8u-t4m">
+                        <barButtonItem key="rightBarButtonItem" title="Reset All" id="O7m-8u-t4m">
                             <connections>
                                 <action selector="addUser:" destination="6FI-Ta-wwB" id="Si0-B2-W7Q"/>
                             </connections>
@@ -1243,7 +1243,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NTG-ql-5B9"/>
+        <segue reference="fOZ-NM-AiV"/>
         <segue reference="tIO-cY-9UB"/>
         <segue reference="4Zs-ws-nGU"/>
     </inferredMetricsTieBreakers>
